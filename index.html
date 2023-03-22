@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Image Guess </title>
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        img {
+            margin: 20px;
+        }
+    </style>
+    <script>
+        init = () => {
+            let allImgs = document.getElementsByTagName('img')
+            for (let i = 0; i < allImgs.length; i++) {
+                allImgs[i].onclick = showImage;
+            }
+        }
+
+        showImage = (evObj) => {
+            let image = evObj.target
+            image.src = './assets/' + image.id + '.jpg'
+        }
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <img id="zero" src="./assets/zeroblur.jpg">
+    <img id="one" src="./assets/oneblur.jpg">
+    <img id="two" src="./assets/twoblur.jpg">
+    <img id="three" src="./assets/threeblur.jpg">
+    <img id="four" src="./assets/fourblur.jpg">
+    <img id="five" src="./assets/fiveblur.jpg">
+</body>
+
+</html>
