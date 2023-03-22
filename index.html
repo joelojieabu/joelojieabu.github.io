@@ -14,37 +14,21 @@
         }
     </style>
     <script>
-        // init = () => {
-        //     let allImgs = document.getElementsByTagName('img')
-        //     for (let i = 0; i < allImgs.length; i++) {
-        //         allImgs[i].onclick = showImage;
-        //     }
-        // }
-
-        // showImage = (evObj) => {
-        //     let image = evObj.target
-        //     image.src = './assets/' + image.id + '.jpg';
-
-        // }
-
-        // window.onload = init;
-
-
         init = () => {
             let images = document.getElementsByTagName('img');
             for (let i = 0; i < images.length; i++) {
-                images[i].onclick = showImage;
+                images[i].onmouseover = showImage;
             }
         }
 
         showImage = (event) => {
             let image = event.target;
             image.src = './assets/' + image.id + '.jpg';
-
-            setTimeout(reblur, 2000, image)
+            image.onmouseout = reblur;
         }
 
-        reblur = (image) => {
+        reblur = (event) => {
+            let image = event.target;
             image.src = './assets/' + image.id + 'blur.jpg';
         }
 
