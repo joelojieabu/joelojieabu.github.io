@@ -18,13 +18,14 @@
             let images = document.getElementsByTagName('img');
             for (let i = 0; i < images.length; i++) {
                 images[i].onmouseover = showImage;
+                images[i].onmouseout = reblur;
             }
         }
 
         showImage = (event) => {
             let image = event.target;
             image.src = './assets/' + image.id + '.jpg';
-            image.onmouseout = reblur;
+
         }
 
         reblur = (event) => {
